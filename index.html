@@ -4,219 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Яр-Балкон — Профессиональное остекление и отделка в Ярославле</title>
+    <!-- Подключение современного шрифта Montserrat -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Шапка сайта (Панель навигации) -->
     <header class="header">
-        <div class="container header-container">
+        <div class="header-container container">
             <div class="logo">
-                <a href="index.html">ЯР<span>БАЛКОН</span></a>
+                <a href="#">ЯР <span>БАЛКОН</span></a>
             </div>
+            
             <nav class="nav" id="nav-menu">
-                <a href="index.html" class="nav-link active">Главная</a>
-                <a href="services.html" class="nav-link">Услуги и цены</a>
+                <a href="#hero" class="nav-link active">Главная</a>
+                <a href="#about" class="nav-link">Почему мы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+                <a href="https://vk.com" target="_blank" class="nav-link vk-link">Наша группа VK</a>
             </nav>
+
             <div class="header-contacts">
                 <a href="tel:+79962389643" class="phone">+7 (996) 238-96-43</a>
-                <button class="btn btn-order" onclick="openModal()">Вызвать мастера</button>
+                <button class="btn btn-order" id="open-modal-btn">Вызвать мастера</button>
+                
+                <!-- Кнопка бургер-меню для мобильных устройств -->
+                <button class="burger" id="burger-btn" aria-label="Открыть меню">
+                    <span></span>
+                </button>
             </div>
-            <button class="burger" id="burger-btn"><span></span></button>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-tag">Капитальный ремонт и остекление</div>
-                <h1>Надежные балконы <br>от профессионалов</h1>
-                <p>Качественное остекление, профессиональное утепление и финишная отделка лоджий в Ярославле с гарантией.</p>
-                <div class="hero-actions">
-                    <a href="services.html" class="btn btn-primary">Посмотреть цены</a>
-                    <button class="btn btn-secondary" onclick="openModal()">Бесплатный замер</button>
-                </div>
+    <!-- Главный экран (Hero) -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <span class="hero-tag">Капитальный ремонт и остекление</span>
+            <h1>Надежные балконы<br>от профессионалов</h1>
+            <p>Качественное остекление, профессиональное утепление и финишная отделка лоджий в Ярославле с гарантией.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" id="hero-modal-btn">Бесплатный замер</button>
+                <a href="https://vk.com" target="_blank" class="btn btn-secondary">Написать нам в VK</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="features container">
+    <!-- Секция «Почему выбирают нас» -->
+    <section class="features" id="about">
+        <div class="container">
             <div class="section-header">
                 <span class="sub-title">Наши стандарты</span>
                 <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="subtitle">Делаем упор на честность, долговечность конструкций и строгое соблюдение взятых на себя обязательств.</div>
             </div>
+            
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">15+</div>
-                    <h3>Лет на рынке</h3>
-                    <p>Опыт работы с 2008 года позволяет нам успешно реализовывать проекты любой архитектурной сложности.</p>
-                </div>
+                <!-- Карточка 1 -->
+<div class="feature-card">
+    <div class="feature-icon">2019</div>
+    <h3>На рынке</h3>
+    <p>Опыт работы с 2019 года позволяет нам успешно реализовывать проекты любой архитектурной сложности.</p>
+</div>
+
+                
+                <!-- Карточка 2 -->
                 <div class="feature-card">
                     <div class="feature-icon">0%</div>
                     <h3>Переплат</h3>
                     <p>Никаких наценок в процессе. Окончательная стоимость прописывается в договоре до начала монтажа.</p>
                 </div>
+                
+                <!-- Карточка 3 -->
                 <div class="feature-card">
                     <div class="feature-icon">✓</div>
                     <h3>Под ключ</h3>
                     <p>Берем на себя всё: от точного замера, закупки материалов и доставки до чистовой уборки мусора.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-info">
-                <div class="logo"><a href="index.html">ЯР<span>БАЛКОН</span></a></div>
-                <p>г. Ярославль, Полушкина Роща, 16</p>
+    <!-- Контактная секция -->
+    <section class="page-content" id="contacts">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Связаться с нами</span>
+                <h2 class="section-title">Ярославль</h2>
             </div>
-            <div class="footer-contacts">
-                <a href="tel:+79962389643" class="footer-phone">+7 (996) 238-96-43</a>
-                <p>Email: schaible@yar-balkon.ru</p>
+            
+            <div class="contacts-wrapper">
+                <div class="info-block">
+                    <p><strong>Адрес офиса:</strong> г. Ярославль, Полушкина Роща, 16</p>
+                    <p><strong>Email:</strong> <a href="mailto:schaible@yar-balkon.ru">schaible@yar-balkon.ru</a></p>
+                    <p><strong>Мы ВКонтакте:</strong> <a href="https://vk.com" target="_blank" class="highlight-link">://vk.com</a></p>
+                </div>
+                <div class="phone-block">
+                    <a href="tel:+79962389643" class="footer-phone">+7 (996) 238-96-43</a>
+                    <p>Звоните для консультации или пишите в сообщения группы VK</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 Яр-Балкон. Все права защищены.</p>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Яр-Балкон. Все права защищены. Официальное сообщество: ://vk.com</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно заказа замера -->
     <div class="modal" id="order-modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" id="close-modal-btn">&times;</button>
             <h3>Заявка на бесплатный замер</h3>
             <p>Заполните форму, и наш инженер-замерщик свяжется с вами для согласования времени визита.</p>
-            <form id="lead-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Номер телефона" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Отправить заявку</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Услуги и цены — Яр-Балкон</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">ЯР<span>БАЛКОН</span></a>
-            </div>
-            <nav class="nav" id="nav-menu">
-                <a href="index.html" class="nav-link">Главная</a>
-                <a href="services.html" class="nav-link active">Услуги и цены</a>
-            </nav>
-            <div class="header-contacts">
-                <a href="tel:+79962389643" class="phone">+7 (996) 238-96-43</a>
-                <button class="btn btn-order" onclick="openModal()">Вызвать мастера</button>
-            </div>
-            <button class="burger" id="burger-btn"><span></span></button>
-        </div>
-    </header>
-
-    <main class="container page-content">
-        <div class="section-header">
-            <span class="sub-title">Наш прайс</span>
-            <h1 class="page-title">Услуги и базовые цены</h1>
-            <p class="subtitle">Фиксированная стоимость рассчитывается индивидуально мастером после проведения бесплатного замера на объекте.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Алюминиевое остекление</h3>
-                    <p>Холодные раздвижные конструкции из профиля Provedal. Надежная защита от пыли, осадков и ветра.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 23 000 ₽</span>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Пластиковое остекление</h3>
-                    <p>Теплые металлопластиковые ПВХ-системы. Позволяют превратить балкон в жилую комнату или рабочий кабинет.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 32 000 ₽</span>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Панорамное остекление</h3>
-                    <p>Французское остекление от пола до потолка. Максимальный обзор, визуальное расширение и стильный фасад.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 30 000 ₽</span>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Внутренняя отделка</h3>
-                    <p>Комплексная обшивка поверхностей: деревянная евровагонка, ламинированные ПВХ и МДФ панели, укладка полов.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 1 000 ₽/м²</span>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Встроенные шкафы</h3>
-                    <p>Изготовление функциональной мебели, тумб и эргономичных шкафов-купе под габариты конкретной лоджии.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 9 000 ₽</span>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-body">
-                    <h3>Крыши и козырьки</h3>
-                    <p>Проектирование, монтаж, шумоизоляция и гидроизоляция крыш над балконами на последних этажах зданий.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-label">Цена</span>
-                    <span class="price">от 3 000 ₽/м.п.</span>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-info">
-                <div class="logo"><a href="index.html">ЯР<span>БАЛКОН</span></a></div>
-                <p>г. Ярославль, Полушкина Роща, 16</p>
-            </div>
-            <div class="footer-contacts">
-                <a href="tel:+79962389643" class="footer-phone">+7 (996) 238-96-43</a>
-                <p>Email: schaible@yar-balkon.ru</p>
-            </div>
-        </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 Яр-Балкон. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <div class="modal" id="order-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h3>Заявка на бесплатный замер</h3>
-            <p>Заполните форму, и наш инженер-замерщик свяжется с вами для согласования времени визита.</p>
+            
             <form id="lead-form">
                 <div class="form-group">
                     <input type="text" placeholder="Ваше имя" required>

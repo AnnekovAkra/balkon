@@ -14,13 +14,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-light);
     background-color: var(--bg-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -76,6 +78,14 @@ body {
     color: var(--yellow);
 }
 
+.nav-link.vk-link {
+    color: #5181b8;
+}
+
+.nav-link.vk-link:hover {
+    color: #71aaeb;
+}
+
 .header-contacts {
     display: flex;
     align-items: center;
@@ -98,7 +108,7 @@ body {
 .btn {
     padding: 12px 24px;
     border: none;
-    border-radius: 0; /* Строгие прямые углы */
+    border-radius: 0;
     cursor: pointer;
     font-weight: 700;
     font-size: 13px;
@@ -128,19 +138,22 @@ body {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.03);
     color: var(--text-light);
     border: 2px solid var(--border-color);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-secondary:hover {
-    border-color: var(--text-light);
+    border-color: #5181b8;
+    color: #71aaeb;
 }
 
-/* Секция Hero */
+/* Главный экран (Hero) */
 .hero {
-    padding: 120px 0;
-    background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.95)), 
+    padding: 140px 0;
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95)), 
                 url('https://unsplash.com') no-repeat center center/cover;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
@@ -180,9 +193,14 @@ body {
     gap: 16px;
 }
 
-/* Секции контента */
-.features, .page-content {
-    padding: 90px 20px;
+/* Секция преимуществ */
+.features {
+    padding: 90px 0;
+}
+
+.page-content {
+    padding: 90px 0;
+    background-color: var(--bg-surface);
 }
 
 .section-header {
@@ -200,7 +218,7 @@ body {
     margin-bottom: 10px;
 }
 
-.section-title, .page-title {
+.section-title {
     font-size: 34px;
     font-weight: 900;
     text-transform: uppercase;
@@ -213,22 +231,20 @@ body {
     font-size: 15px;
 }
 
-/* Сетки */
-.features-grid, .services-grid {
+.features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 24px;
 }
 
-/* Карточки */
-.feature-card, .service-item {
+.feature-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
     padding: 40px 30px;
     transition: var(--transition);
 }
 
-.feature-card:hover, .service-item:hover {
+.feature-card:hover {
     border-color: var(--yellow);
 }
 
@@ -239,79 +255,57 @@ body {
     margin-bottom: 16px;
 }
 
-.feature-card h3, .service-body h3 {
+.feature-card h3 {
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.feature-card p, .service-body p {
+.feature-card p {
     color: var(--text-muted);
     font-size: 14px;
 }
 
-/* Специфика карточек услуг */
-.service-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.service-body p {
-    margin-bottom: 30px;
-}
-
-.service-footer {
+/* Блок контактов */
+.contacts-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
+    gap: 40px;
 }
 
-.price-label {
-    font-size: 11px;
+.info-block p {
+    font-size: 16px;
+    margin-bottom: 12px;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.price {
-    font-size: 22px;
-    font-weight: 900;
+.info-block p strong {
+    color: var(--text-light);
+}
+
+.info-block a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.info-block .highlight-link {
     color: var(--yellow);
+    font-weight: 700;
 }
 
-/* Подвал сайта (Футер) */
-.footer {
-    background-color: var(--bg-surface);
-    border-top: 1px solid var(--border-color);
-    padding: 60px 0 30px 0;
+.info-block .highlight-link:hover {
+    text-decoration: underline;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.footer-info p {
-    color: var(--text-muted);
-    margin-top: 12px;
-    font-size: 14px;
-}
-
-.footer-contacts {
+.phone-block {
     text-align: right;
 }
 
 .footer-phone {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 800;
     color: var(--text-light);
     text-decoration: none;
     display: block;
@@ -323,13 +317,20 @@ body {
     color: var(--yellow);
 }
 
-.footer-contacts p {
+.phone-block p {
     color: var(--text-muted);
     font-size: 14px;
 }
 
+/* Футер */
+.footer {
+    background-color: #0d0d0d;
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+}
+
 .footer-bottom {
-    padding-top: 30px;
+    text-align: center;
     font-size: 13px;
     color: var(--text-muted);
 }
@@ -362,7 +363,6 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 10px;
-    letter-spacing: 0.5px;
 }
 
 .modal-content p {
@@ -412,7 +412,7 @@ body {
     margin-top: 8px;
 }
 
-/* Бургер меню */
+/* Мобильный бургер */
 .burger {
     display: none;
     background: none;
@@ -436,6 +436,7 @@ body {
 .burger span::before { top: -7px; }
 .burger span::after { top: 7px; }
 
+/* Адаптивность */
 @media (max-width: 768px) {
     .nav {
         display: none;
@@ -447,11 +448,12 @@ body {
         background-color: var(--bg-surface);
         padding: 24px;
         border-bottom: 2px solid var(--yellow);
+        gap: 20px;
     }
     .nav.active { display: flex; }
     .burger { display: block; }
     .header-contacts .btn-order { display: none; }
     .hero h1 { font-size: 32px; }
-    .footer-container { flex-direction: column; gap: 32px; }
-    .footer-contacts { text-align: left; }
+    .contacts-wrapper { flex-direction: column; align-items: flex-start; gap: 30px; }
+    .phone-block { text-align: left; }
 }
